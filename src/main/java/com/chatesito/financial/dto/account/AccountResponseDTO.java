@@ -9,6 +9,7 @@ public class AccountResponseDTO {
     private String accountType;
     private String status;
     private Double balance;
+    private Double availableBalance;
     private Boolean exemptGMF;
     private Long clientId;
     private LocalDate updatedAt;
@@ -48,6 +49,13 @@ public class AccountResponseDTO {
     }
     public void setBalance(Double balance) {
         this.balance = balance;
+    }
+
+    public Double getAvailableBalance() {
+        return availableBalance;
+    }
+    public void setAvailableBalance(Double availableBalance) {
+        this.availableBalance = availableBalance;
     }
 
     public Boolean getExemptGMF() {

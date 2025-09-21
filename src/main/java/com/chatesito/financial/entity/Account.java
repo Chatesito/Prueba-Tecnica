@@ -27,6 +27,9 @@ public class Account {
     private Boolean exemptGMF;
 
     @Column(nullable = false)
+    private Double availableBalance;
+
+    @Column(nullable = false)
     private LocalDate createdAt;
 
     @Column
@@ -46,6 +49,7 @@ public class Account {
         this.accountType = accountType;
         this.status = status;
         this.balance = balance;
+        this.availableBalance = balance;
         this.exemptGMF = exemptGMF;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
@@ -82,6 +86,12 @@ public class Account {
     }
     public void setBalance(Double balance) {
         this.balance = balance;
+    }
+    public Double getAvailableBalance() {
+        return availableBalance;
+    }
+    public void setAvailableBalance(Double availableBalance) {
+        this.availableBalance = availableBalance;
     }
     public Boolean getExemptGMF() {
         return exemptGMF;

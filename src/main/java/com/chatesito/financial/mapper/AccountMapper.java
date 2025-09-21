@@ -13,7 +13,9 @@ public interface AccountMapper {
 
     // Create
     @Mapping(target = "id", ignore = true)
+    @Mapping(target = "accountNumber", ignore = true)
     @Mapping(target = "balance", expression = "java(source.getInitialBalance() == null ? 0d : source.getInitialBalance())")
+    @Mapping(target = "availableBalance", expression = "java(source.getInitialBalance() == null ? 0d : source.getInitialBalance())")
     @Mapping(target = "client", source = "client")
     @Mapping(target = "createdAt", ignore = true)
     @Mapping(target = "updatedAt", ignore = true)
@@ -22,7 +24,10 @@ public interface AccountMapper {
     // Update
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
     @Mapping(target = "id", ignore = true)
+    @Mapping(target = "accountNumber", ignore = true)
     @Mapping(target = "balance", ignore = true)
+    @Mapping(target = "availableBalance", ignore = true)
+    @Mapping(target = "client", ignore = true)
     @Mapping(target = "createdAt", ignore = true)
     @Mapping(target = "updatedAt", ignore = true)
     void updateEntity(AccountRequestDTO source, @MappingTarget Account target, Client client);
