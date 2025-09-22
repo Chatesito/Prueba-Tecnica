@@ -10,8 +10,6 @@ public class AccountRequestDTO {
     @NotNull
     private Long clientId;
 
-    @NotBlank
-    @Size(max = 10)
     private String accountNumber;
 
     @NotBlank
@@ -21,8 +19,6 @@ public class AccountRequestDTO {
     @PositiveOrZero
     private Double initialBalance = 0.0;
 
-    @NotBlank
-    @Size(max = 20)
     private String status; // "Activa", "Inactiva", "Cancelada"
 
     @NotNull
